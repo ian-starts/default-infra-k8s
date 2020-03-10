@@ -1,0 +1,7 @@
+src/.terraform
+.idea
+.kubeconfig
+*/*.tfstate.backup
+.DS_Store
+*.ovpn
+.vscode
