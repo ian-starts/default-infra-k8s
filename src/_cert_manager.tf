@@ -14,20 +14,13 @@ resource "kubernetes_namespace" "cert_manager" {
   }
 }
 
-data "helm_repository" "jetstack" {
-  depends_on = [null_resource.cert_manager_crds]
-
-  name = "jetstack"
-  url = "https://charts.jetstack.io"
-}
-
 resource "helm_release" "cert_manager" {
   depends_on = [null_resource.kubernetes_service_account_tiller]
   name = "cert-manager"
   namespace = kubernetes_namespace.cert_manager.metadata[0].name
-  repository = data.helm_repository.jetstack.name
-  chart = "jetstack/cert-manager"
-  version = "v0.13.0"
+  repository = "https://charts.jetstack.io"
+  chart = "cert-manager"
+  version = "v0.15.1"
 }
 
 resource "null_resource" "cert_manager_acme_issuers" {
