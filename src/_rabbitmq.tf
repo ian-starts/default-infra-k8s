@@ -30,6 +30,11 @@ resource "helm_release" "rabbitmq" {
     value = "secret"
     # Minimum size for a hetzner volume
   }
+  set {
+    name = "plugins"
+    value = "rabbitmq_management rabbitmq_shovel rabbitmq_shovel_management"
+    # Minimum size for a hetzner volume
+  }
 
   timeout = 600
 }
