@@ -1,7 +1,8 @@
 resource "helm_release" "rabbitmq" {
   depends_on = [
     null_resource.kubernetes_service_account_tiller,
-    null_resource.rabbitmq_namespace
+    null_resource.rabbitmq_namespace,
+    null_resource.hetnzer_csi_driver
   ]
   name = "rabbitmq"
   namespace = "rabbit"

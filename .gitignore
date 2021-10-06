@@ -5,3 +5,4 @@ src/.terraform
 .DS_Store
 *.ovpn
 .vscode
+*/*.tfstate

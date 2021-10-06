@@ -3,27 +3,27 @@ variable "kubernetes_config" {
 }
 
 variable "kubernetes_hetzner_csi_yaml" {
-  default = "https://raw.githubusercontent.com/hetznercloud/csi-driver/v1.2.2/deploy/kubernetes/hcloud-csi.yml"
+  default = "https://raw.githubusercontent.com/hetznercloud/csi-driver/v1.6.0/deploy/kubernetes/hcloud-csi.yml"
 }
 
 variable "hetzner_token" {
-  default= "wGo6CF6bp6j28at8Hep98STv1ksQ2zW3YTZF2bgZGWgJr4d5krks5wICOFnl2Kze"
+  default= ""
 }
 
 variable "kubernetes_cert_manager_crds_yaml" {
-  default = "https://raw.githubusercontent.com/jetstack/cert-manager/release-0.12/deploy/manifests/00-crds.yaml"
+  default = "https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.crds.yaml"
 }
 
 variable "project_name" {
-  default= "loopground-prod"
+  default= "finway-prod"
 }
 
 variable "docker_hub_username" {
-  default= "yikdev"
+  default= ""
 }
 
 variable "docker_hub_password" {
-  default= "Y@4svoT15S*l"
+  default= ""
 }
 
 variable "whitelist_ips" {

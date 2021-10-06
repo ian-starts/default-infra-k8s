@@ -6,7 +6,7 @@ resource "helm_release" "openvpn" {
   namespace = "kube-system"
   repository = "https://raw.githubusercontent.com/ian-starts/openvpn-helm-chart/master"
   chart = "openvpn"
-  version = "4.2.5"
+  version = "4.3.0"
 
   set {
     name = "service.type"

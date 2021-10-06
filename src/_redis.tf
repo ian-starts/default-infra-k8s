@@ -1,7 +1,8 @@
 resource "helm_release" "redis" {
   depends_on = [
     null_resource.kubernetes_service_account_tiller,
-    null_resource.redis_namespace
+    null_resource.redis_namespace,
+    null_resource.hetnzer_csi_driver
   ]
   name       = "redis"
   namespace  = "redis"
